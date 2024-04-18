@@ -42,7 +42,6 @@ class EnsembleTrader(tpqoa.tpqoa):
             self.data[col] = self.data['returns'].shift(lag)
             self.cols.append(col)
         self.tick_data.to_csv('tick_output.csv')
-        self.data.to_csv('data_output.csv')
         self.data.dropna(inplace=True)
         
         # Ensuring the model isn't trying to predict on an empty data set.
@@ -50,7 +49,7 @@ class EnsembleTrader(tpqoa.tpqoa):
             self.data['ensemble_prediction'] = self.ensemble.predict(self.data[self.cols])
             self.data['prediction'] = np.where(self.data['ensemble_prediction'] >
                                                0, 1, -1)
-            self.data.to_csv('data_output2.csv')
+    
 
 
             # Implementing the trading logic. 
