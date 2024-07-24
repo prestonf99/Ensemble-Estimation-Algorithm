@@ -1,4 +1,4 @@
-# Practice Project - Python for Algorithmic Trading
+# Ensemble Estimation Algorithm - Test Run 
 by Preston Fisk
 
 April 18, 2024
