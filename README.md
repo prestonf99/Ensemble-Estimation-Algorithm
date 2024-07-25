@@ -6,7 +6,7 @@ April 18, 2024
 
 ## Features
 
-This package trains an ensemble estimation algorithm then deploys it into real-time trading using the Oanda API for the testing. The model is trained to make binary predictions regarding the future price action of an underlying asset (in our case EUR_USD), by taking the asset's price, the asset's returns, and the asset's lagged returns (lagged by 3). If the model thinks that the next return will be positive, it puts out +1. If negative, -1. We then implement it using a class called `EnsembleTrader.py` that utilizes an Oanda API wrapper package, tpqoa (https://github.com/yhilpisch/tpqoa). It takes incoming price data, resamples the data, calculates the last price for the interval provided (in our case, 5-minute bars), implements lags, and then applies our ensemble estimation algorithm to generate predictions in real-time. Included in the on_success is the trading logic that we'll implement as well. After the running the algorithm in real-time, the Jupyter Notebook file `Practice_Project.ipynb` has a section that allows the user to review the algorithm's performance visually. 
+This package trains an ensemble estimation algorithm then deploys it into real-time trading using the Oanda API for the testing. The model is trained to make binary predictions regarding the future price action of an underlying asset (in our case EUR_USD), by taking the asset's price, the asset's returns, and the asset's lagged returns (lagged by 3). If the model thinks that the next return will be positive, it puts out +1. If negative, -1. We then implement it using a class called `EnsembleTrader.py` that utilizes an Oanda API wrapper package, tpqoa (https://github.com/yhilpisch/tpqoa). It takes incoming price data, resamples the data, calculates the last price for the interval provided (in our case, 5-minute bars), implements lags, and then applies our ensemble estimation algorithm to generate predictions in real-time. Included in the on_success is the trading logic that we'll implement as well. After the running the algorithm in real-time, the Jupyter Notebook file `Algorithm_Implementation.ipynb` has a section that allows the user to review the algorithm's performance visually. 
 
 ## Installation
 To set up the environment:
@@ -18,7 +18,7 @@ To set up the environment:
 
     https://github.com/yhilpisch/tpqoa
     
-    Go to the README for detailed instructions
+    Go to the README for detailed instructions. We personally prefer using a cloud service (DigitalOcean) inside of a docker container when using the Oanda API.
     
 3. Setup an 'oanda.cfg' file:
 
